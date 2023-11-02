@@ -5,7 +5,6 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password', 
-  connectionLimit: 10,
 });
 
 const sqlStatements = fs.readFileSync("init.sql", 'utf-8').split(";") 
