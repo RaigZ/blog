@@ -1,0 +1,51 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+.navbar-fixed-top {
+    box-shadow: 0 -6px 25px #000;
+    z-index: 1000;
+}
+
+.navbar-toggler {
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+}
+
+.boxbody {
+    width: 300px;
+    height: 570px;
+}
+
+body {
+    padding-top: 80px;
+    background-color: #ecf0f1;
+}
+
+.yamm {
+    padding: 10px 20px!important;
+}
+
+footer {
+    padding: 30px 0 30px;
+    color: #ecf0f1;
+    background: #ecf0f1;
+    box-shadow: inset 0 9px 25px -16px #000;
+}
+
+.footer-txt {
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-logos {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto 0 auto;
+    position: relative;
+}
