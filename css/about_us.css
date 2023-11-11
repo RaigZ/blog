@@ -30,6 +30,17 @@ body {
     padding: 10px 20px!important;
 }
 
+.link-group a {
+    width: inherit;
+    flex-grow: 1;
+}
+
+@media(min-width: 992px){
+    .link-group {
+        order: 3!important;
+    }
+}
+
 #title_info {
     text-align: center;
     line-height: 1.8;

@@ -8,25 +8,31 @@
     <link href="../css/contact_page.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar yamm navbar-fixed-top navbar-expand-sm">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">blog</a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar-navigation">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/posts">Create post</a>
-                </li>
-              </ul>
-            </div>
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="link-group gap-2 ms-auto d-flex col-8 col-sm-4 col-lg-2 justify-content-end"> 
+            <a class="btn btn-outline-success" href="login.html">Log in</a>
+            <a class="btn btn-primary" href="signup.html">Sign in</a> 
+          </div>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Hidden brand</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div> 
         </div>
-    </nav>
+      </nav>
     <!-- BODY SEGMENT -->
     <div>
         <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2">

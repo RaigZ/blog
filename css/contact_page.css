@@ -16,6 +16,17 @@
     margin-right: 25px;
 }
 
+.link-group a {
+    width: inherit;
+    flex-grow: 1;
+}
+
+@media(min-width: 992px){
+    .link-group {
+        order: 3!important;
+    }
+}
+
 .boxbody {
     margin-top: auto; /*6%*/
     height: auto;
