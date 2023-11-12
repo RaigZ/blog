@@ -1,21 +1,3 @@
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-fixed-top {
-    box-shadow: 0 -6px 25px #000;
-    z-index: 1000;
-}
-
-.navbar-toggler {
-    position: absolute;
-    right: 0;
-    margin-right: 25px;
-}
-
 .boxbody {
     margin-top: auto; /*6%*/
     height: auto;
