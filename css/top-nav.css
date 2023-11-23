@@ -1,0 +1,22 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+  }
+
+.navbar-fixed-top {
+    z-index: 1000;
+}
+
+.link-group a {
+    width: inherit;
+    flex-grow: 1;
+}
+
+@media(min-width: 992px){
+    .link-group {
+        order: 3!important;
+    }
+}

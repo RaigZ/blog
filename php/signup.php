@@ -6,55 +6,32 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="../css/signup.css" rel="stylesheet" type="text/css" >
-</head>
+    <link href="../css/top-nav.css" rel="stylesheet" type="text/css">
+  </head>
 <body> 
-    <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="link-group gap-2 ms-auto d-flex col-8 col-sm-4 col-lg-2 justify-content-end"> 
-            <a class="btn btn-outline-success" href="login.html">Log in</a>
-            <a class="btn btn-primary" href="signup.html">Sign in</a> 
-          </div>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Hidden brand</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div> 
-        </div>
-      </nav>
+  <!-- NAVBAR -->
+  <?php include '../includes/header.php'?> 
     <!-- Body -->
     <div class="container d-flex flex-column justify-content-center align-items-center gap-2 h-75">
         <h1>Welcome to our blog!</h1>
-        <form>
+        <form action="register.php" method="GET">
             <div class="row gap-2 justify-content-center">
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username">
                     </div>
                 </div>
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Email" aria-label="Email">
+                        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email">
                     </div>
                 </div>
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password">
                     </div>
                 </div> 
                 <div class="col-8 col-md-6 d-flex justify-content-center">
