@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php 
+        $userid=null;
+        if(isset($_GET["idusers"])) {
+            $userid = $_GET["idusers"];
+        }
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog</title>
@@ -24,6 +30,24 @@
         </form>
     </div>
     <!-- FOOTER -->
+    <?php 
+        if(isset($_GET['idusers']))
+            $UserID = $_GET['idusers'];
+        else {
+            echo 'not logged in';
+        }
+        if(isset($_SESSION['idusers']) && !empty($_SESSION['idusers'])) {
+            require_once("../includes/config.php");
+            $users = "users";
+            $sql = "SELECT * FROM $users WHERE idusers = '$UserID'";
+            $result = $pdo->query($sql);
+            if($row = $result->fetch()) {
+                $userid = $UserID;
+            }
+            $pdo = null;
+        }
+    ?>
+    <p><strong>ID: </strong> <?=$userid?></p>
     <?php include '../includes/footer.php'?>
 </body>
 </html>
