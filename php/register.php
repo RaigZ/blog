@@ -34,7 +34,7 @@
         $pdo = null;
     ?>
     <p>Your new user ID is <strong><?=$UserID?></strong></p>
-    <p><a href="home.php?idusers=<?=$UserID?>">Home Portal</a></p>
+    <p><a href="home.php?idusers=<?=$UserID?>&username=<?=$username?>">Home Portal</a></p>
 
 </body>
 </html>

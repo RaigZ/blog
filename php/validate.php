@@ -33,6 +33,6 @@
 ?>
     <h2> Login Successful</h2>
     <!--send the user ID to home.php-->
-<p><a href="home.php?idusers=<?=$UserID?>">Home Portal</a></p>
+<p><a href="home.php?idusers=<?=$UserID?>&username=<?=$username?>">Home Portal</a></p>
 </body>
 </html>

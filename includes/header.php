@@ -8,7 +8,7 @@
     <div class="link-group gap-2 ms-auto d-flex col-8 col-sm-4 col-lg-2 justify-content-end">';
   
     if(isset($_GET["idusers"])) {
-      echo'Welcome';
+      echo'Welcome' . " " . $username;
     } else {
       echo '<a class="btn btn-outline-success" href="../php/login.php">Log in</a>
       <a class="btn btn-primary" href="../php/signup.php">Sign up</a>';

@@ -3,8 +3,13 @@
 <head>
     <?php 
         $userid=null;
+        $username=null;
         if(isset($_GET["idusers"])) {
             $userid = $_GET["idusers"];
+        }
+        
+        if(isset($_GET["idusers"])) {
+            $username = $_GET["username"];
         }
     ?>
     <meta charset="UTF-8">
@@ -29,13 +34,7 @@
             </div>
         </form>
     </div>
-    <!-- FOOTER -->
     <?php 
-        if(isset($_GET['idusers']))
-            $UserID = $_GET['idusers'];
-        else {
-            echo 'not logged in';
-        }
         if(isset($_SESSION['idusers']) && !empty($_SESSION['idusers'])) {
             require_once("../includes/config.php");
             $users = "users";
@@ -46,8 +45,17 @@
             }
             $pdo = null;
         }
+        if(isset($_GET['idusers'])) {
+            $UserID = $_GET['idusers'];
+            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>ID: </strong>' . $userid . '</p>';
+        }
+        else {
+            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>Not logged in</strong></p>';
+        }
+        echo $logMessage;
     ?>
-    <p><strong>ID: </strong> <?=$userid?></p>
+    <!-- <p style="text-align: center; font-size: 54px"><strong>ID: </strong> <?=$userid?></p> -->
+    <!-- FOOTER -->
     <?php include '../includes/footer.php'?>
 </body>
 </html>
