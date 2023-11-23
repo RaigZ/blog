@@ -26,6 +26,15 @@
         $sql = "INSERT INTO $users (username, email, password) VALUES ('$username', '$email','$password')";
         $pdo->exec($sql);
 
+        $sql = "SELECT * FROM $users WHERE email = '$email'";
+        $result= $pdo->query($sql);
+        if($row = $result->fetch())
+        $UserID = $row['idusers'];
+
+        $pdo = null;
     ?>
+    <p>Your new user ID is <strong><?=$UserID?></strong></p>
+    <p><a href="home.php?idusers=<?=$UserID?>">Home Portal</a></p>
+
 </body>
 </html>
