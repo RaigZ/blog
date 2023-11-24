@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <?php 
+        session_start();
+        include("../includes/postlayout.php");
+
         $userid=null;
         $username=null;
         if(isset($_GET["idusers"])) {
@@ -27,33 +30,37 @@
     <?php include '../includes/header.php'?> 
     <!-- BODY SEGMENT -->
     <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2">
+        <!--
         <h1>Welcome to our blog!</h1>
         <form action="results.php" method="GET">
             <div class="form-outline" data-mdb-input-init>
                 <input type="search" id="form1" class="form-control" placeholder="Search User" aria-label="Search" />
             </div>
         </form>
-    </div>
-    <?php 
-        if(isset($_SESSION['idusers']) && !empty($_SESSION['idusers'])) {
+        -->
+        <?php 
             require_once("../includes/config.php");
-            $users = "users";
-            $sql = "SELECT * FROM $users WHERE idusers = '$UserID'";
-            $result = $pdo->query($sql);
-            if($row = $result->fetch()) {
-                $userid = $UserID;
+            $post = new Post();
+            $getPosts = "SELECT * FROM posts";
+            $postResults = $pdo->query($getPosts);
+            while($row = $postResults->fetch()) {
+                //echo '<p>' . $row['title'] . ' </p>';
+                //echo '<p>' . $row['content'] . ' </p>'; 
+                $post->set_title($row['title']);
+                $post->set_content($row['content']);
+                $post->print();
             }
-            $pdo = null;
-        }
-        if(isset($_GET['idusers'])) {
-            $UserID = $_GET['idusers'];
-            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>ID: </strong>' . $userid . '</p>';
-        }
-        else {
+        ?> 
+    </div>
+    
+    <!--<?php 
+        if(isset($_SESSION['idusers'], $_SESSION['username']) && !empty($_SESSION['idusers']) && !empty($_SESSION['username'])){
+            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>ID: </strong>' . $_SESSION['idusers'] . '</p>';
+        } else {
             $logMessage = '<p style="text-align: center; font-size: 54px"><strong>Not logged in</strong></p>';
-        }
+        } 
         echo $logMessage;
-    ?>
+    ?>-->
     <!-- FOOTER -->
     <?php include '../includes/footer.php'?>
 </body>
