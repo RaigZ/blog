@@ -54,7 +54,6 @@
         }
         echo $logMessage;
     ?>
-    <!-- <p style="text-align: center; font-size: 54px"><strong>ID: </strong> <?=$userid?></p> -->
     <!-- FOOTER -->
     <?php include '../includes/footer.php'?>
 </body>
