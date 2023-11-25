@@ -1,3 +1,6 @@
+<?php 
+    session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,9 +35,11 @@
         $UserID = $row['idusers'];
 
         $pdo = null;
+
+        //Save into sessions 
     ?>
     <p>Your new user ID is <strong><?=$UserID?></strong></p>
-    <p><a href="home.php?idusers=<?=$UserID?>&username=<?=$username?>">Home Portal</a></p>
+    <p><a href="home.php">Home Portal</a></p>
 
 </body>
 </html>

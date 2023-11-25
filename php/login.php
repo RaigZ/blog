@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
   </head>
 <body> 
     <!-- NAVBAR -->
-    <?php include '../includes/header.php'?> 
+    <?php include "../includes/header.php"?> 
     <!-- Body -->
     <div class="container d-flex flex-column justify-content-center align-items-center gap-2 h-75">
         <h1>Login In!</h1>
@@ -20,19 +23,19 @@
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username">
+                        <input type="text" class="input-field form-control" name="username" placeholder="Username" aria-label="Username">
                     </div>
                 </div>
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email">
+                        <input type="text" class="input-field form-control" name="email" placeholder="Email" aria-label="Email">
                     </div>
                 </div>
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password">
+                        <input type="password" class="input-field form-control" name="password" placeholder="Password" aria-label="Password">
                     </div>
                 </div> 
                 <div class="col-8 col-md-6 d-flex justify-content-center">
@@ -40,6 +43,7 @@
                 </div>
             </div> 
         </form>
+        <h3 class="error" style="color: red;"></h3>
     </div>
     <!-- Footer -->
     <!-- <script>
@@ -48,5 +52,6 @@
         window.location.href = "home.php";
       })
     </script> -->
+    <script src="../js/login.js"></script>
 </body>
 </html>

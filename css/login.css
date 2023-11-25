@@ -4,3 +4,7 @@ html, body {
     width: 100%;
     overflow: hidden;
 }  
+
+.error {
+    height: 25px;
+}

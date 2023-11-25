@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +8,7 @@
     <title>Validate</title>
 </head>
 <body>
-<?php
-    if (empty($_GET['username'])||empty($_GET['email'])||empty($_GET['password']))
-        exit ("<p> You must enter values in all fields! Click your browser's Back button to return to the previous page.</p>");
-
+<?php 
     $username = $_GET['username'];
     $email = $_GET['email'];
     $password  = $_GET['password'];
@@ -25,14 +25,14 @@
 
     if(!$row = $result->fetch()) 
         exit("You must enter a valid email address and password. Click your browser's Back button to return to the previous page.</p>");
-    else {
-        $UserID = $row['idusers'];
-    }
+    
+    $_SESSION['idusers'] = $row['idusers'];
+    $_SESSION['username'] = $row['username'];
 
     $pdo = null;
 ?>
     <h2> Login Successful</h2>
     <!--send the user ID to home.php-->
-<p><a href="home.php?idusers=<?=$UserID?>&username=<?=$username?>">Home Portal</a></p>
+<p><a href="home.php">Home Portal</a></p>
 </body>
 </html>

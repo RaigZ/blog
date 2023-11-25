@@ -1,4 +1,5 @@
 <?php
+  session_start();
   //<!-- Navbar -->
   echo '<nav class="navbar navbar-fixed-top sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -7,8 +8,9 @@
     </button>
     <div class="link-group gap-2 ms-auto d-flex col-8 col-sm-4 col-lg-2 justify-content-end">';
   
-    if(isset($_GET["idusers"])) {
-      echo'Welcome' . " " . $username;
+    if(isset($_SESSION["idusers"])) {
+      echo '<h6>Welcome ' . $_SESSION["username"] . '</h6>
+            <a class="btn btn-primary" href="../php/login.php">Log out</a>';
     } else {
       echo '<a class="btn btn-outline-success" href="../php/login.php">Log in</a>
       <a class="btn btn-primary" href="../php/signup.php">Sign up</a>';
