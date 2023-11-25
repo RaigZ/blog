@@ -7,6 +7,12 @@
         public $idcomment = "";
         public $content = "";
 
+        function __construct($username, $idcomment, $content){
+            $this->username = $username;
+            $this->idcomment = $idcomment;
+            $this->content = $content;
+        }
+
         function set_username($username){
             $this->username = $username;
         }

@@ -12,7 +12,7 @@
         } 
 
         //$post = new Post();
-        $comment = new Comment();
+        //$comment = new Comment();
         $tablePosts = "posts";
         $tableComments = "comments";
         $tableUsers = "users";
@@ -53,9 +53,7 @@
                 $commentsResults = $pdo->query($getComments);
 
                 while($row = $commentsResults->fetch()){
-                    $comment->set_username($row['username']);
-                    $comment->set_idcomment($row['idcomment']);
-                    $comment->set_content($row['content']);
+                    $comment = new Comment($row['username'], $row['idcomment'], $row['content']); 
                     $comment->print();
                 } 
                 $pdo = null;
