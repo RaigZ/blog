@@ -39,17 +39,15 @@
         </form>
         -->
         <?php 
-            require_once("../includes/config.php");
-            $post = new Post();
-            $getPosts = "SELECT * FROM posts";
+            require_once("../includes/config.php"); 
+            $getPosts = "SELECT username, idpost, title, content FROM users, posts WHERE idusers = userid";
             $postResults = $pdo->query($getPosts);
-            while($row = $postResults->fetch()) {
-                //echo '<p>' . $row['title'] . ' </p>';
-                //echo '<p>' . $row['content'] . ' </p>'; 
-                $post->set_title($row['title']);
-                $post->set_content($row['content']);
+            while($row = $postResults->fetch()) {  
+                $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], false); 
                 $post->print();
             }
+
+            $pdo = null;
         ?> 
     </div>
     
