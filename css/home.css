@@ -3,6 +3,10 @@
     height: 100%;
 }
 
+.link-group {
+    align-items: baseline;
+}
+
 body {
     padding-top: 80px;
 }
