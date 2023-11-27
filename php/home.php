@@ -30,14 +30,6 @@
     <?php include '../includes/header.php'?> 
     <!-- BODY SEGMENT -->
     <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2">
-        <!--
-        <h1>Welcome to our blog!</h1>
-        <form action="results.php" method="GET">
-            <div class="form-outline" data-mdb-input-init>
-                <input type="search" id="form1" class="form-control" placeholder="Search User" aria-label="Search" />
-            </div>
-        </form>
-        -->
         <?php 
             require_once("../includes/config.php"); 
             $getPosts = "SELECT username, idpost, title, content FROM users, posts WHERE idusers = userid";
