@@ -10,7 +10,7 @@
   
     if(isset($_SESSION["idusers"])) {
       echo '<h6>Welcome ' . $_SESSION["username"] . '</h6>
-            <a class="btn btn-primary" href="../php/login.php">Log out</a>';
+            <form action="logout.php" method="POST"><button class="btn btn-primary" type="submit">Log out</button></form>';
     } else {
       echo '<a class="btn btn-outline-success" href="../php/login.php">Log in</a>
       <a class="btn btn-primary" href="../php/signup.php">Sign up</a>';

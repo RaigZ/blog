@@ -39,13 +39,14 @@
         }
 
         function print() { 
-            echo '<div class="card" id="post-card" style="width: 35rem;" ' . (!$this->linked ? 'onclick="window.location.href=\'post.php?idpost=' . $this->idpost . '\';"' : "") . '>
-            <div class="card-body">
-              <h5 class="card-title">' . $this->title . ' </h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">By: ' . $this->username . '</h6>
-              <p class="card-text">' . $this->content . '</p> 
-            </div>
-          </div>';
+            echo 
+            '<div class="card" id="post-card" style="width: 35rem;" ' . (!$this->linked ? 'onclick="window.location.href=\'post.php?idpost=' . $this->idpost . '\';"' : "") . '>
+                <div class="card-body">
+                <h5 class="card-title">' . $this->title . ' </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">By: ' . $this->username . '</h6>
+                <p class="card-text">' . $this->content . '</p> 
+                </div>
+            </div>';
         } 
     }
 ?>
