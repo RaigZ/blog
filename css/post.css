@@ -1,0 +1,10 @@
+.commentbox { 
+    box-sizing: border-box;
+    height: 60px; 
+    overflow: hidden;
+    resize: none;
+}
+
+.content {
+    margin-bottom: 0px;
+}

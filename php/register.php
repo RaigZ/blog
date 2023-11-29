@@ -36,10 +36,13 @@
 
         $pdo = null;
 
-        //Save into sessions 
+        $_SESSION['idusers'] = $row['idusers'];
+        $_SESSION['username'] = $row['username'];
+        
+        header()
     ?>
-    <p>Your new user ID is <strong><?=$UserID?></strong></p>
-    <p><a href="home.php">Home Portal</a></p>
+    <!--<p>Your new user ID is <strong><?=$UserID?></strong></p>-->
+    <!--<p><a href="home.php">Home Portal</a></p>-->
 
 </body>
 </html>
