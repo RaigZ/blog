@@ -30,15 +30,10 @@
     <?php include '../includes/header.php'?> 
     <!-- BODY SEGMENT -->
     <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2">
-        <!--
-        <h1>Welcome to our blog!</h1>
-        <form action="results.php" method="GET">
-            <div class="form-outline" data-mdb-input-init>
-                <input type="search" id="form1" class="form-control" placeholder="Search User" aria-label="Search" />
-            </div>
-        </form>
-        -->
+        <?php include '../includes/postbox.php' ?> 
         <?php 
+            if(!isset($_SESSION['idusers'], $_SESSION['username']))
+                header("Location: login.php");
             require_once("../includes/config.php"); 
             $getPosts = "SELECT username, idpost, title, content FROM users, posts WHERE idusers = userid";
             $postResults = $pdo->query($getPosts);
@@ -49,18 +44,10 @@
 
             $pdo = null;
         ?> 
-    </div>
-    
-    <!--<?php 
-        if(isset($_SESSION['idusers'], $_SESSION['username']) && !empty($_SESSION['idusers']) && !empty($_SESSION['username'])){
-            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>ID: </strong>' . $_SESSION['idusers'] . '</p>';
-        } else {
-            $logMessage = '<p style="text-align: center; font-size: 54px"><strong>Not logged in</strong></p>';
-        } 
-        echo $logMessage;
-    ?>-->
+    </div> 
     <!-- FOOTER -->
     <?php include '../includes/footer.php'?>
+    <script src="../js/textarea.js"></script>
 </body>
 </html>
 
