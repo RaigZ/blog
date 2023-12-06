@@ -23,8 +23,9 @@
             AND password = '$password'";
     $result = $pdo->query($sql);
 
-    if(!$row = $result->fetch()) 
-        exit("You must enter a valid email address and password. Click your browser's Back button to return to the previous page.</p>");
+    if(!$row = $result->fetch())
+        header("Location: login.php"); 
+        //exit("You must enter a valid email address and password. Click your browser's Back button to return to the previous page.</p>");
     
     $_SESSION['idusers'] = $row['idusers'];
     $_SESSION['username'] = $row['username'];

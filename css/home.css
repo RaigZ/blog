@@ -1,10 +1,13 @@
 .boxbody {
     width: 300px;
     height: 100%;
-}
+} 
 
-.link-group {
-    align-items: baseline;
+.postbox { 
+    box-sizing: border-box;
+    height: 60px; 
+    overflow: hidden;
+    resize: none;
 }
 
 body {

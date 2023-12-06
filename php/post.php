@@ -51,9 +51,10 @@
                 }  
             }
         ?>  
+        <!--Input field for comments-->
         <?php include '../includes/commentbox.php' ?> 
-        <?php 
-            if(isset($idpost)){  
+        <?php  
+            if(isset($idpost, $_SESSION['idusers'], $_SESSION['username'])){  
                 $getComments = "SELECT username, idcomment, content, userid 
                                 FROM comments, users 
                                 WHERE postid='$idpost' 
@@ -68,16 +69,16 @@
                     } else {
                         $comment = new Comment($row['username'], $row['idcomment'], $row['content'], false); 
                         $comment->print();
-                    }
-                    //$comment = new Comment($row['username'], $row['idcomment'], $row['content']); 
-                    //$comment->print();
+                    } 
                 } 
                 $pdo = null;
+            } else {
+                header("Location: login.php");
             }
         ?>
     </div>  
     <?php include '../includes/footer.php'?>
-    <script src="../js/post.js"></script>
+    <script src="../js/textarea.js"></script>
 </body>
 </html>
 
