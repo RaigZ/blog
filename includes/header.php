@@ -1,5 +1,4 @@
-<?php
-  session_start();
+<?php 
   //<!-- Navbar -->
   echo '<nav class="navbar navbar-fixed-top sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">

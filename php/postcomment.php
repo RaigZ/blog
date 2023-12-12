@@ -9,8 +9,12 @@
         $content = $_POST['comment'];
         try {
             $postComment = "INSERT INTO $commentTable (content, userid, postid) 
-                            VALUES ('$content', '$userId', '$postId')";
-            $pdo->exec($postComment);
+                            VALUES (:content, :userid, :postid)";
+            
+            //Prepared statement
+            $result = $pdo->prepare($postComment);
+            $result->execute(array(":content" => $content, ":userid" => $userId, ":postid" => $postId)); 
+
             header('Location: post.php?idpost=' . $_SESSION['currPostId']);
         } catch(Exception $error){
             header('Location: post.php?idpost=' . $_SESSION['currPostId']);

@@ -8,3 +8,8 @@
 .content {
     margin-bottom: 0px;
 }
+
+.testing {
+    display: flex;
+    flex-direction: column;
+}

@@ -8,14 +8,15 @@
         public $content = "";
         public $idpost = "";
         public $linked = false; 
-        public $link = "";
+        public $delete = false;
 
-        function __construct($username, $title, $content, $id, $linked){
+        function __construct($username, $title, $content, $id, $linked, $delete){
             $this->username = $username;
             $this->title = $title;
             $this->content = $content;
             $this->idpost = $id;
             $this->linked = $linked;
+            $this->delete = $delete;
         }
 
         function set_username($username){
@@ -42,9 +43,10 @@
             echo 
             '<div class="card" id="post-card" style="width: 35rem;" ' . (!$this->linked ? 'onclick="window.location.href=\'post.php?idpost=' . $this->idpost . '\';"' : "") . '>
                 <div class="card-body">
-                <h5 class="card-title">' . $this->title . ' </h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">By: ' . $this->username . '</h6>
-                <p class="card-text">' . $this->content . '</p> 
+                    <h5 class="card-title">' . $this->title . ' </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">By: ' . $this->username . '</h6>
+                    <p class="card-text">' . $this->content . '</p> 
+                    '. ($this->delete ? '<form action="deletepost.php" method="POST"><button class="btn btn-outline-secondary" name="id" value="'. $this->idpost .'" type="submit" id="button-addon2">Delete</button></form>' : "" ) . '
                 </div>
             </div>';
         } 
