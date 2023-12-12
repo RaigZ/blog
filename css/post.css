@@ -8,3 +8,8 @@
 .content {
     margin-bottom: 0px;
 }
+
+.comment-body {
+    display: flex;
+    flex-direction: column;
+}

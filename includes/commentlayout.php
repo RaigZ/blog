@@ -29,9 +29,9 @@
 
         function print(){
             echo '<div class="card mb-3" style="width: 35rem;">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <h5 class="card-title">' . $this->username . ' </h5>
-                        <p class="card-text content">' . $this->content . '</p> 
+                    <div class="card-body comment-body gap-2">
+                        <h5 class="card-title">' . $this->username . ' </h5> 
+                        <p class="card-text content">' . $this->content . '</p>  
                         '. ($this->delete ? '<form action="deletecomment.php" method="POST"><button class="btn btn-outline-secondary" name="id" value="'. $this->idcomment .'" type="submit" id="button-addon2">Delete</button></form>' : "" ) . ' 
                     </div>
                   </div>';

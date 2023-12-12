@@ -4,6 +4,7 @@
     <?php 
         session_start();
         include("../includes/postlayout.php");
+        require_once("../includes/config.php"); 
 
         $userid=null;
         $username=null;
@@ -30,19 +31,29 @@
     <?php include '../includes/header.php'?> 
     <!-- BODY SEGMENT -->
     <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2">
+        <!--Post creation Menu-->
         <?php include '../includes/postbox.php' ?> 
         <?php 
-            if(!isset($_SESSION['idusers'], $_SESSION['username']))
-                header("Location: login.php");
-            require_once("../includes/config.php"); 
-            $getPosts = "SELECT username, idpost, title, content FROM users, posts WHERE idusers = userid";
-            $postResults = $pdo->query($getPosts);
-            while($row = $postResults->fetch()) {  
-                $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], false); 
-                $post->print();
-            }
+        if(!isset($_SESSION['idusers'], $_SESSION['username']))
+            header("Location: login.php"); 
 
-            $pdo = null;
+        $getPosts = "SELECT idusers, username, idpost, title, content 
+                     FROM users, posts 
+                     WHERE idusers = userid";
+
+        $postResults = $pdo->query($getPosts);
+        
+        while($row = $postResults->fetch()) {  
+            if($_SESSION['idusers'] == $row['idusers']){
+                $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], false, true); 
+                $post->print();
+            } else {
+                $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], false, false); 
+                $post->print();
+            }  
+        }
+
+        $pdo = null;
         ?> 
     </div> 
     <!-- FOOTER -->

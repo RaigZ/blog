@@ -37,17 +37,28 @@
     <!-- BODY SEGMENT -->
     <div class="boxbody container d-flex flex-column justify-content-center align-items-center gap-2"> 
         <?php  
-            if(isset($idpost)){  
+            if(!isset($_SESSION['idusers'], $_SESSION['username']))
+                header("Location: login.php"); 
+            
+            if(isset($idpost, $_SESSION['idusers'])){  
                 $_SESSION['currPostId'] = $idpost;
-                $getPost = "SELECT username, title, content, idpost 
+                $getPost = "SELECT idusers, username, title, content, idpost 
                             FROM $tableUsers, $tablePosts
-                            WHERE idpost='$idpost' 
-                            AND idusers='$idpost' ";  
-                $postResults = $pdo->query($getPost);
+                            WHERE idpost=:idpost 
+                            AND idusers=userid";  
+                            
+                //Prepared statement
+                $postResults = $pdo->prepare($getPost);
+                $postResults->execute(array(":idpost" => $idpost));
 
                 if($row = $postResults->fetch()){
-                    $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], true); 
-                    $post->print();
+                    if($_SESSION['idusers'] == $row['idusers']){
+                        $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], true, true); 
+                        $post->print();
+                    } else {
+                        $post = new Post($row['username'], $row['title'], $row['content'], $row['idpost'], true, false); 
+                        $post->print();
+                    } 
                 }  
             }
         ?>  
@@ -57,10 +68,13 @@
             if(isset($idpost, $_SESSION['idusers'], $_SESSION['username'])){  
                 $getComments = "SELECT username, idcomment, content, userid 
                                 FROM comments, users 
-                                WHERE postid='$idpost' 
+                                WHERE postid=:idpost
                                 AND idusers=userid
                                 ORDER BY comments.idcomment ASC"; 
-                $commentsResults = $pdo->query($getComments);
+
+                //Prepared statements
+                $commentsResults = $pdo->prepare($getComments);
+                $commentsResults->execute(array(":idpost" => $idpost));
 
                 while($row = $commentsResults->fetch()){
                     if($_SESSION['idusers'] == $row['userid']){
