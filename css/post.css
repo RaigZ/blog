@@ -9,7 +9,7 @@
     margin-bottom: 0px;
 }
 
-.testing {
+.comment-body {
     display: flex;
     flex-direction: column;
 }
