@@ -30,7 +30,7 @@
                 <div class="col-8 col-md-6">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="input-field form-control" name="email" placeholder="Email" aria-label="Email">
+                        <input type="text" class="input-field email form-control" name="email" placeholder="Email" aria-label="Email">
                     </div>
                 </div>
                 <div class="col-8 col-md-6">
@@ -42,9 +42,9 @@
                 <div class="col-8 col-md-6 d-flex justify-content-center">
                     <input type="submit" class="login col-8 col-md-6 btn btn-primary mb-3" onclick="home.php">
                 </div>
-            </div> 
+            </div>  
         </form>
-        <h3 class="error" style="color: red;"></h3>
+        <div class="error col-8 col-md-6 d-flex justify-content-center" style="color: red;"></div>
     </div>
     <!-- Footer -->
     <!-- <script>
