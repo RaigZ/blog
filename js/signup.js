@@ -27,8 +27,7 @@ window.addEventListener("load", () => {
                 e.target.submit()
             }
         } catch (error) {
-            console.log(error)
-            return;
+            console.log(error) 
         }
     })
 })

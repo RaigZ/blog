@@ -29,8 +29,7 @@ window.addEventListener("load", () => {
                 e.target.submit()
             }
         } catch (error) {
-            console.log(error)
-            e.preventDefault()
+            console.log(error) 
         }
     })
 })
