@@ -1,11 +1,10 @@
 <?php 
     session_start();
-
+    require_once("../includes/config.php");
+    
     $username = $_GET['username'];
     $email = $_GET['email'];
-    $password  = $_GET['password'];
-
-    require_once("../includes/config.php");
+    $password  = $_GET['password']; 
 
     try {
         $userTable = "users";

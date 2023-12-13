@@ -1,22 +1,11 @@
 <?php
-    session_start();
-
-    if (empty($_GET['username'])||empty($_GET['email'])||empty($_GET['password']))
-        exit ("<p> You must enter values in all fields ! Click your browser's Back button to return to the previous page.</p>");
-
+    session_start(); 
     require_once("../includes/config.php");
 
     $userTable = "users";
     $username = $_GET['username'];
     $email = $_GET['email'];
-    $password = $_GET['password'];
-
-    $sql = "SELECT * FROM $userTable";
-    $result = $pdo->query($sql);
-    while($row = $result->fetch()) {
-        if($row['email']==$email)
-            exit("<p>The email address you entered is already registered! Click your browser's Back button to return to the previous page.</p>");
-    } 
+    $password = $_GET['password']; 
 
     $sql = "INSERT INTO $userTable (username, email, password) 
             VALUES (:username, :email, :pass)";
