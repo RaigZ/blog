@@ -81,6 +81,24 @@ CREATE TABLE IF NOT EXISTS `blogdb`.`comments` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+
+-- -----------------------------------------------------
+-- Table `blogdb`.`contact_form`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `blogdb`.`contact_form` (
+  `id_submission` INT NOT NULL AUTO_INCREMENT,
+  `userid` INT NOT NULL,
+  `context` TEXT NOT NULL,
+  PRIMARY KEY (`id_submission`),
+  UNIQUE INDEX id_submission_UNIQUE (`id_submission` ASC),
+  CONSTRAINT `userid_FOREIGN_KEY_contact_form`
+    FOREIGN KEY (`userid`)
+    REFERENCES `blogdb`.`users` (`idusers`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
 INSERT INTO users (`username`, `email`, `password`) VALUES("Peggy", "foo1@csusm.edu", "12345");
 INSERT INTO users (`username`, `email`, `password`) VALUES("Rag", "foo2@csusm.edu", "23456");
 INSERT INTO users (`username`, `email`, `password`) VALUES("Brian", "foo3@csusm.edu", "34567");
@@ -105,3 +123,4 @@ INSERT INTO comments (`content`, `userid`, `postid`) VALUES ("Agreed", "1", "4")
 INSERT INTO comments (`content`, `userid`, `postid`) VALUES ("Agreed", "2", "4");
 INSERT INTO comments (`content`, `userid`, `postid`) VALUES ("Agreed", "3", "4");
 INSERT INTO comments (`content`, `userid`, `postid`) VALUES ("Agreed", "4", "4");
+INSERT INTO contact_form (`userid`, `context`) VALUES ("1", "TEST RUN");
