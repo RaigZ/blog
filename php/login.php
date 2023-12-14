@@ -8,6 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <?php include('../includes/config.php'); ?>
+    <script>
+        var port = <?php echo json_encode($port); ?>;
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="../css/login.css" rel="stylesheet" type="text/css" >
     <link href="../css/top-nav.css" rel="stylesheet" type="text/css">
@@ -40,19 +44,12 @@
                     </div>
                 </div> 
                 <div class="col-8 col-md-6 d-flex justify-content-center">
-                    <input type="submit" class="login col-8 col-md-6 btn btn-primary mb-3" onclick="home.php">
+                    <input type="submit" class="login col-8 col-md-6 btn btn-primary mb-3">
                 </div>
             </div>  
         </form>
         <div class="error col-8 col-md-6 d-flex justify-content-center" style="color: red;"></div>
     </div>
-    <!-- Footer -->
-    <!-- <script>
-      document.querySelector(".login").addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location.href = "home.php";
-      })
-    </script> -->
-    <script src="../js/login.js"></script>
+    <script src="../js/login.js" defer></script>
 </body>
 </html>
