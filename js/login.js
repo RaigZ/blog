@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
             }) 
 
             //Checking if user exists with same email
-            const response = await fetch("http://localhost:8888/php/checkdb.php", { method: "POST", body }); 
+            const response = await fetch("http://localhost:" + port + "/blog/php/checkdb.php", { method: "POST", body }); 
             const data = await response.json()
             
             //If user exists does not exist show hint and return early.

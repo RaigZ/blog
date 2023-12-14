@@ -1,4 +1,5 @@
 <?php
+    $port = getenv("PORT");
     $connString = "mysql:host=localhost:8889; dbname=blogdb";
     $user="root";
     $pass="root";
