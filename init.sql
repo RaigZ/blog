@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS `blogdb`.`posts` ;
 CREATE TABLE IF NOT EXISTS `blogdb`.`posts` (
   `idpost` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(90) NOT NULL,
-  `content` TEXT NOT NULL,
+  `content` MEDIUMTEXT NOT NULL,
   `date` DATE NOT NULL,
   `userid` INT NOT NULL,
   PRIMARY KEY (`idpost`),
@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `blogdb`.`comments` ;
 
 CREATE TABLE IF NOT EXISTS `blogdb`.`comments` (
   `idcomment` INT NOT NULL AUTO_INCREMENT,
-  `content` MEDIUMTEXT NOT NULL,
+  `content` TEXT NOT NULL,
   `userid` INT NOT NULL,
   `postid` INT NOT NULL,
   PRIMARY KEY (`idcomment`),

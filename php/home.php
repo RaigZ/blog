@@ -37,9 +37,10 @@
         if(!isset($_SESSION['idusers'], $_SESSION['username']))
             header("Location: login.php"); 
 
-        $getPosts = "SELECT idusers, username, idpost, title, content 
+        $getPosts = "SELECT idusers, username, idpost, title, content, date 
                      FROM users, posts 
-                     WHERE idusers = userid";
+                     WHERE idusers = userid
+                     ORDER BY date DESC";
 
         $postResults = $pdo->query($getPosts);
         
