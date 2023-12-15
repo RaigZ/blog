@@ -16,7 +16,7 @@
     }
   echo '</div>
 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  <a class="navbar-brand">bloggoli</a>
+  <h1 class="navbar-brand">bloggoli</h1>
 </div> 
 </div>
 </nav>';
