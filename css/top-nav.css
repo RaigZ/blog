@@ -6,6 +6,10 @@
     background-color: white;
   }
 
+.navbar-logo {
+    text-decoration: none;
+}
+
 .navbar-fixed-top {
     z-index: 1000;
 }
