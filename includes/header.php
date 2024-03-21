@@ -8,7 +8,7 @@
             </button>
             <div class="link-group gap-2 ms-auto d-flex col-8 col-sm-4 col-lg-2 justify-content-end">
             <h6>Welcome ' . $_SESSION["username"] . '</h6>
-            <form action="logout.php" method="POST"><button class="btn btn-primary" type="submit">Log out</button>
+            <form action="logout.php" method="POST"><button class="btn btn-primary" type="submit">Log out</button></form>
             </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a href="home.php" class="navbar-logo"><h1 class="navbar-brand">bloggoli</h1></a>
